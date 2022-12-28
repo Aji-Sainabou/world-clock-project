@@ -28,14 +28,20 @@ function updateTime() {
       "h:mm:ss [<small>]A[</small>]"
     );
   }
-  let parisDateElement = parisElement.querySelector(".date");
-  let parisTimeElement = parisElement.querySelector(".time");
-  let parisTime = moment().tz("Europe/Paris");
+  //Banjul
+  let banjulElement = document.querySelector("#banjul");
+  if (banjulElement) {
+    let banjulDateElement = banjulElement.querySelector(".date");
+    let banjulTimeElement = banjulElement.querySelector(".time");
+    let banjulTime = moment().tz("Africa/Banjul");
 
-  parisDateElement.innerHTML = moment()
-    .tz("Europe/Paris")
-    .format("MMMM Do YYYY");
-  parisTimeElement.innerHTML = parisTime.format("h:mm:ss [<small>]A[</small>]");
+    banjulDateElement.innerHTML = moment()
+      .tz("Africa/Banjul")
+      .format("MMMM Do YYYY");
+    banjulTimeElement.innerHTML = banjulTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
 }
 
 function updateCity(event) {
@@ -63,6 +69,3 @@ citiesSelect.addEventListener("change", updateCity);
 
 updateTime();
 setInterval(updateTime, 1000);
-
-updateCity();
-setInterval(updateCity, 1000);
