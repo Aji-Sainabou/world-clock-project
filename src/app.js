@@ -61,6 +61,7 @@ function updateCity(event) {
             "h:mm:ss"
           )}<small>${cityTime.format("A")}</small></div>
         </div>
+        <a href="https://world-clock-aji.netlify.app" id="link">All Cities</a>
         `;
 }
 
